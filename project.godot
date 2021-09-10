@@ -24,6 +24,10 @@ config/name="Jorth"
 run/main_scene="res://test.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Log="*res://Log.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray(  )

@@ -1,6 +1,8 @@
 extends Spatial
 class_name Chunk
 
+const MountainMat = preload("res://terrain/mountain.material")
+
 var mesh_instance
 var noise
 var x
@@ -31,7 +33,7 @@ func generate_chunk():
 	for i in range(data_tool.get_vertex_count()):
 		var vertex = data_tool.get_vertex(i)
 
-		vertex.y = noise.get_noise_3d(vertex.x + x, vertex.y, vertex.z + z) * 80
+		vertex.y = noise.get_noise_3d(vertex.x + x, vertex.y, vertex.z + z) * 25
 
 		data_tool.set_vertex(i, vertex)
 
@@ -48,3 +50,4 @@ func generate_chunk():
 	mesh_instance.create_trimesh_collision()
 	mesh_instance.cast_shadow = GeometryInstance.SHADOW_CASTING_SETTING_OFF
 	add_child(mesh_instance)
+	mesh_instance.set_surface_material(0, MountainMat)

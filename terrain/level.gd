@@ -14,8 +14,9 @@ func _ready():
 	randomize()
 	noise = OpenSimplexNoise.new()
 	noise.seed = randi()
-	noise.octaves = 6
-	noise.period = 80
+	noise.octaves = 2
+	noise.period = 32
+	noise.persistence = 0.2
 
 	thread = Thread.new()
 	for x in range(-3, 3):
@@ -41,7 +42,6 @@ func load_chunk(args):
 
 	var chunk = Chunk.new(noise, x * chunk_size, z * chunk_size, chunk_size)
 	chunk.translation = Vector3(x * chunk_size, 0, z * chunk_size)
-	print(chunk.translation)
 
 	call_deferred("load_done", chunk, thread, get_key(x, z))
 

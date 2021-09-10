@@ -16,9 +16,9 @@ func _on_Timer_timeout():
 	var b = Ball.instance()
 	add_child(b)
 	b.set_translation(Vector3(
-		randi() % 64 - 32,
-		25,
-		randi() % 64 - 32
+		randi() % 512 - 256,
+		45,
+		randi() % 512 - 256
 	))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
