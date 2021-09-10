@@ -6,8 +6,6 @@ const HEIGHT_SCALE = 25
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	yield(tex, "changed")
-	var asd = tex as NoiseTexture
-	asd.
 	var image = tex.get_data()
 	var xRatio = image.get_size().x / shape.map_width
 	var zRatio = image.get_size().y / shape.map_depth

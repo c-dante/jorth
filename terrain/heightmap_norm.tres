@@ -9,5 +9,6 @@ persistence = 0.2
 width = 256
 height = 256
 seamless = true
+as_normalmap = true
 bump_strength = 10.9
 noise = SubResource( 1 )
